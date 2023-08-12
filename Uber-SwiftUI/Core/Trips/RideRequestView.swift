@@ -44,7 +44,7 @@ struct RideRequestView: View {
                         
                         Spacer()
                         
-                        Text("1:30 PM")
+                        Text(LocationViewModel.pickupTime ?? "")
                             .font(.footnote)
                             .fontWeight(.semibold)
                             .foregroundColor(.gray)
@@ -52,13 +52,15 @@ struct RideRequestView: View {
                     .padding(.bottom, 10)
                     
                     HStack {
-                        Text("Starbucs Coffee")
-                            .font(.body)
-                            .fontWeight(.semibold)
+                        if let location = LocationViewModel.selectedUberLocation {
+                            Text(location.title)
+                                .font(.body)
+                                .fontWeight(.semibold)
+                        }
                         
                         Spacer()
                         
-                        Text("1:45 PM")
+                        Text(LocationViewModel.dropOffTime ?? "")
                             .font(.footnote)
                             .fontWeight(.semibold)
                             .foregroundColor(.gray)
@@ -78,7 +80,7 @@ struct RideRequestView: View {
                 .foregroundColor(Color(.gray))
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            ScrollView(.horizontal) {
+            ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
                     ForEach(RideType.allCases) { type in
                         VStack(alignment: .leading) {
@@ -91,15 +93,15 @@ struct RideRequestView: View {
                                     .font(.footnote)
                                     .fontWeight(.semibold)
                                 
-                                Text(LocationViewModel.computeRidePrice(forType: type).toCurrency())
+                                Text(LocationViewModel.computeRidePrice(forType: type).toCurrency() )
                                     .font(.footnote)
                                     .fontWeight(.semibold)
                             }
                             .padding()
                         }
                         .frame(width: 112, height: 140)
-                        .foregroundColor(type == selectedRideType ? .white : .black)
-                        .background(Color(type == selectedRideType ? .systemBlue : .systemGroupedBackground))
+                        .foregroundColor(type == selectedRideType ? .white : Color.theme.primararyTextColor)
+                        .background(type == selectedRideType ? .blue : Color.theme.secondaryBackgroundColor)
                         .scaleEffect(type == selectedRideType ? 1.2 : 1.0)
                         .cornerRadius(10)
                         .onTapGesture {
@@ -136,7 +138,7 @@ struct RideRequestView: View {
                     .padding()
             }
             .frame(height: 50)
-            .background(Color(.systemGroupedBackground))
+            .background(Color.theme.secondaryBackgroundColor)
             .cornerRadius(10)
             .padding(.horizontal)
             
@@ -155,7 +157,7 @@ struct RideRequestView: View {
             
         }
         .padding(.bottom, 24)
-        .background(.white)
+        .background(Color.theme.backgroundColor)
         .cornerRadius(12)
 
     }

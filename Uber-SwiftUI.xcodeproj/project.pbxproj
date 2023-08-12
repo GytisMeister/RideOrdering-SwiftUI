@@ -22,6 +22,8 @@
 		BCF5EB802A86BC51006460AD /* RideRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5EB7F2A86BC51006460AD /* RideRequestView.swift */; };
 		BCF5EB822A878509006460AD /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5EB812A878509006460AD /* RideType.swift */; };
 		BCF5EB842A878C94006460AD /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5EB832A878C94006460AD /* Double.swift */; };
+		BCF5EB862A879289006460AD /* UberLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5EB852A879289006460AD /* UberLocation.swift */; };
+		BCF5EB882A879A7A006460AD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5EB872A879A7A006460AD /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		BCF5EB7F2A86BC51006460AD /* RideRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRequestView.swift; sourceTree = "<group>"; };
 		BCF5EB812A878509006460AD /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
 		BCF5EB832A878C94006460AD /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		BCF5EB852A879289006460AD /* UberLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberLocation.swift; sourceTree = "<group>"; };
+		BCF5EB872A879A7A006460AD /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 			children = (
 				BCF5EB7C2A86B3EA006460AD /* MapViewState.swift */,
 				BCF5EB812A878509006460AD /* RideType.swift */,
+				BCF5EB852A879289006460AD /* UberLocation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				BCF5EB832A878C94006460AD /* Double.swift */,
+				BCF5EB872A879A7A006460AD /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -274,8 +280,10 @@
 				BCF5EB7D2A86B3EA006460AD /* MapViewState.swift in Sources */,
 				BCF5EB822A878509006460AD /* RideType.swift in Sources */,
 				BCF5EB752A86948D006460AD /* MapViewActionButton.swift in Sources */,
+				BCF5EB882A879A7A006460AD /* Color.swift in Sources */,
 				BCF5EB532A868CEE006460AD /* Uber_SwiftUIApp.swift in Sources */,
 				BCF5EB6B2A868D9E006460AD /* UberMapViewRepresentable.swift in Sources */,
+				BCF5EB862A879289006460AD /* UberLocation.swift in Sources */,
 				BCF5EB692A868D43006460AD /* HomeView.swift in Sources */,
 				BCF5EB732A869372006460AD /* LocationSearchActivationView.swift in Sources */,
 				BCF5EB792A8696F9006460AD /* LocationSearchResultCell.swift in Sources */,
