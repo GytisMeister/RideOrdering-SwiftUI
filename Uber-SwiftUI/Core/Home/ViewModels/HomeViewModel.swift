@@ -1,46 +1,133 @@
 //
-//  LocationSearchViewModel.swift
-//  Uber-SwiftUI
+//  HomeViewModel.swift
+//  Ride-SwiftUI
 //
-//  Created by Gytis Ptašinskas on 2023-08-11.
+//  Created by Gytis Ptašinskas on 2023-08-12.
 //
 
-import Foundation
-import MapKit
+import SwiftUI
 import Firebase
+import FirebaseFirestoreSwift
+import Combine
+import MapKit
 
-enum LocationResultsViewConfig {
-    case ride
-    case saveLocation(SavedLocationViewModel)
-}
-
-class LocationSearchViewModel: NSObject, ObservableObject {
+class HomeViewModel: NSObject, ObservableObject {
     
     // MARK: - Properties
     
+    @Published var drivers = [User]()
+    private let service = UserService.shared
+    private var cancellables = Set<AnyCancellable>()
+    private var currentUser: User?
+    
+    // Location Search Properties
     @Published var results = [MKLocalSearchCompletion]()
     @Published var selectedRideLocation : RideLocation?
     @Published var pickupTime: String?
     @Published var dropOffTime: String?
-    
     private let searchCompleter = MKLocalSearchCompleter()
+    var userLocation: CLLocationCoordinate2D?
+    
     var queryFragment: String = "" {
         didSet {
             searchCompleter.queryFragment = queryFragment
         }
     }
     
-    var userLocation: CLLocationCoordinate2D?
-    
     // MARK: - Lifecycle
     
     override init() {
         super.init()
+        fetchUser()
+        
         searchCompleter.delegate = self
         searchCompleter.queryFragment = queryFragment
     }
     
-    // MARK: - Helpers
+    // MARK: - User API
+    
+    func fetchDrivers() {
+        Firestore.firestore().collection("users")
+            .whereField("accountType", isEqualTo: AccountType.driver.rawValue)
+            .getDocuments { snapshot, _ in
+                guard let doccuments = snapshot?.documents else { return }
+                let drivers =  doccuments.compactMap({ try? $0.data(as: User.self) })
+                self.drivers = drivers
+                
+                print("DEBUG: Drivers \(drivers)")
+            }
+    }
+    
+    func fetchUser() {        
+        service.$user.sink { user in
+            self.currentUser = user
+            guard let user = user else { return }
+            self.currentUser = user
+            guard user.accountType == .passenger else { return }
+            self.fetchDrivers()
+        }
+        .store(in: &cancellables)
+    }
+}
+
+// MARK: - Passenger API
+
+extension HomeViewModel {
+    func requestTrip() {
+        guard let driver = drivers.first else { return }
+        guard let currentUser = currentUser else { return }
+        guard let dropoffLocation = selectedRideLocation else { return }
+        let dropoffGeoPoint = GeoPoint(latitude: dropoffLocation.coordinate.latitude, longitude: dropoffLocation.coordinate.longitude)
+        let userLocation = CLLocation(latitude: currentUser.coordinates.latitude, longitude: currentUser.coordinates.longitude)
+        
+        getPlacemark(forLocation: userLocation) { placemark, error in
+            guard let placemark = placemark else { return }
+            
+            let trip = Trip(
+                id: NSUUID().uuidString ,
+                passengerUid: currentUser.uid,
+                driverUid: driver.uid,
+                passengerName: currentUser.fullname,
+                driverName: driver.fullname,
+                passengerLocation: currentUser.coordinates,
+                driverLocation: driver.coordinates,
+                pickupLocationName: placemark.name ?? "Current Location",
+                dropoffLocationName: dropoffLocation.title,
+                pickupLocationAddress: "123 Main St",
+                pickupLocation: currentUser.coordinates,
+                dropoffLocation: dropoffGeoPoint,
+                tripCost: 50.0
+            )
+            
+            guard let encodedTrip = try? Firestore.Encoder().encode(trip) else { return }
+            Firestore.firestore().collection("trips").document().setData(encodedTrip) { _ in
+                print("DEBUG: Did upload trip to firestore")
+            }
+        }
+    }
+}
+
+// MARK: - Driver API
+
+extension HomeViewModel {
+    
+}
+
+// MARK: - Location Search Helpers
+
+extension HomeViewModel {
+    
+    func getPlacemark(forLocation location: CLLocation, completion: @escaping(CLPlacemark?, Error?) -> Void ) {
+        CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            
+            guard let placemark = placemarks?.first else { return }
+            completion(placemark, nil)
+        }
+    }
     
     func selectedLocation(_ localSearch: MKLocalSearchCompletion, config: LocationResultsViewConfig) {
         locationSearch(forLocalSearchCompletion: localSearch) { response, error in
@@ -119,9 +206,7 @@ class LocationSearchViewModel: NSObject, ObservableObject {
     }
 }
 
-// MARK: - MKLocalSearchCompleterDelegate
-
-extension LocationSearchViewModel: MKLocalSearchCompleterDelegate {
+extension HomeViewModel: MKLocalSearchCompleterDelegate {
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
         self.results = completer.results
     }
