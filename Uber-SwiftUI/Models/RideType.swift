@@ -11,6 +11,7 @@ enum RideType: Int, CaseIterable, Identifiable {
     case uberX
     case uberBlack
     case uberXL
+    case uberBlackSUV
     
     var id: Int { return rawValue }
     
@@ -22,6 +23,8 @@ enum RideType: Int, CaseIterable, Identifiable {
             return "Uber Black"
         case .uberXL:
             return "Uber XL"
+        case .uberBlackSUV:
+            return "Uber SUV"
         }
     }
     
@@ -32,7 +35,10 @@ enum RideType: Int, CaseIterable, Identifiable {
         case .uberBlack:
             return "uber-black"
         case .uberXL:
-            return "uber-x"
+            return "uber-XL"
+        case .uberBlackSUV:
+            return "uber-black-SUV"
+
         }
     }
     
@@ -44,6 +50,8 @@ enum RideType: Int, CaseIterable, Identifiable {
             return 20
         case .uberXL:
             return 10
+        case .uberBlackSUV:
+            return 40
         }
     }
     
@@ -57,7 +65,8 @@ enum RideType: Int, CaseIterable, Identifiable {
             return distanceInMiles * 2.0 + baseFare
         case .uberXL:
             return distanceInMiles * 1.75 + baseFare
-            
+        case .uberBlackSUV:
+            return distanceInMiles * 3.5 + baseFare
         }
     }
 }
