@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC8A6DF42A87CD5400504B3B /* SideMenuOptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A6DF32A87CD5400504B3B /* SideMenuOptionViewModel.swift */; };
+		BC8A6DF62A87CE2C00504B3B /* SideMenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A6DF52A87CE2C00504B3B /* SideMenuOptionView.swift */; };
 		BCF5EB532A868CEE006460AD /* Uber_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5EB522A868CEE006460AD /* Uber_SwiftUIApp.swift */; };
 		BCF5EB572A868CEF006460AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF5EB562A868CEF006460AD /* Assets.xcassets */; };
 		BCF5EB5A2A868CEF006460AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF5EB592A868CEF006460AD /* Preview Assets.xcassets */; };
@@ -27,9 +29,19 @@
 		BCF5EB8D2A879EC0006460AD /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5EB8C2A879EC0006460AD /* SignInView.swift */; };
 		BCF5EB8F2A879EC9006460AD /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5EB8E2A879EC9006460AD /* SignUpView.swift */; };
 		BCF5EB922A87A4D4006460AD /* CustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5EB912A87A4D4006460AD /* CustomInputField.swift */; };
+		BCF5EB942A87B47B006460AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCF5EB932A87B47B006460AD /* GoogleService-Info.plist */; };
+		BCF5EB972A87B56A006460AD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BCF5EB962A87B56A006460AD /* FirebaseAuth */; };
+		BCF5EB992A87B56A006460AD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BCF5EB982A87B56A006460AD /* FirebaseFirestore */; };
+		BCF5EB9B2A87B56A006460AD /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BCF5EB9A2A87B56A006460AD /* FirebaseFirestoreSwift */; };
+		BCF5EB9D2A87B56A006460AD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BCF5EB9C2A87B56A006460AD /* FirebaseStorage */; };
+		BCF5EB9F2A87B6E0006460AD /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5EB9E2A87B6E0006460AD /* AuthViewModel.swift */; };
+		BCF5EBA12A87BF74006460AD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5EBA02A87BF74006460AD /* User.swift */; };
+		BCF5EBA72A87CA40006460AD /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5EBA62A87CA40006460AD /* SideMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC8A6DF32A87CD5400504B3B /* SideMenuOptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionViewModel.swift; sourceTree = "<group>"; };
+		BC8A6DF52A87CE2C00504B3B /* SideMenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionView.swift; sourceTree = "<group>"; };
 		BCF5EB4F2A868CEE006460AD /* Uber-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Uber-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF5EB522A868CEE006460AD /* Uber_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uber_SwiftUIApp.swift; sourceTree = "<group>"; };
 		BCF5EB562A868CEF006460AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +63,10 @@
 		BCF5EB8C2A879EC0006460AD /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		BCF5EB8E2A879EC9006460AD /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		BCF5EB912A87A4D4006460AD /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
+		BCF5EB932A87B47B006460AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BCF5EB9E2A87B6E0006460AD /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		BCF5EBA02A87BF74006460AD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BCF5EBA62A87CA40006460AD /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF5EB972A87B56A006460AD /* FirebaseAuth in Frameworks */,
+				BCF5EB9D2A87B56A006460AD /* FirebaseStorage in Frameworks */,
+				BCF5EB992A87B56A006460AD /* FirebaseFirestore in Frameworks */,
+				BCF5EB9B2A87B56A006460AD /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,12 +103,13 @@
 		BCF5EB512A868CEE006460AD /* Uber-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				BCF5EB902A87A4C2006460AD /* Components */,
 				BCF5EB652A868D08006460AD /* App */,
+				BCF5EB902A87A4C2006460AD /* Components */,
 				BCF5EB642A868D06006460AD /* Core */,
 				BCF5EB632A868D05006460AD /* Extensions */,
 				BCF5EB622A868D04006460AD /* Managers */,
 				BCF5EB612A868D03006460AD /* Models */,
+				BCF5EB932A87B47B006460AD /* GoogleService-Info.plist */,
 				BCF5EB562A868CEF006460AD /* Assets.xcassets */,
 				BCF5EB582A868CEF006460AD /* Preview Content */,
 			);
@@ -109,6 +130,7 @@
 				BCF5EB7C2A86B3EA006460AD /* MapViewState.swift */,
 				BCF5EB812A878509006460AD /* RideType.swift */,
 				BCF5EB852A879289006460AD /* UberLocation.swift */,
+				BCF5EBA02A87BF74006460AD /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -133,6 +155,7 @@
 		BCF5EB642A868D06006460AD /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				BCF5EBA22A87CA0B006460AD /* SideMenu */,
 				BCF5EB892A879E9B006460AD /* Authentication */,
 				BCF5EB7E2A86BC3F006460AD /* Trips */,
 				BCF5EB6F2A869353006460AD /* LocationSearch */,
@@ -214,23 +237,24 @@
 			isa = PBXGroup;
 			children = (
 				BCF5EB8B2A879EA2006460AD /* ViewModel */,
-				BCF5EB8A2A879EA0006460AD /* View */,
+				BCF5EB8A2A879EA0006460AD /* Views */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		BCF5EB8A2A879EA0006460AD /* View */ = {
+		BCF5EB8A2A879EA0006460AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				BCF5EB8C2A879EC0006460AD /* SignInView.swift */,
 				BCF5EB8E2A879EC9006460AD /* SignUpView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BCF5EB8B2A879EA2006460AD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				BCF5EB9E2A87B6E0006460AD /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -241,6 +265,32 @@
 				BCF5EB912A87A4D4006460AD /* CustomInputField.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		BCF5EBA22A87CA0B006460AD /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				BCF5EBA42A87CA17006460AD /* ViewModel */,
+				BCF5EBA32A87CA11006460AD /* Views */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		BCF5EBA32A87CA11006460AD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BCF5EBA62A87CA40006460AD /* SideMenuView.swift */,
+				BC8A6DF52A87CE2C00504B3B /* SideMenuOptionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BCF5EBA42A87CA17006460AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BC8A6DF32A87CD5400504B3B /* SideMenuOptionViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +309,12 @@
 			dependencies = (
 			);
 			name = "Uber-SwiftUI";
+			packageProductDependencies = (
+				BCF5EB962A87B56A006460AD /* FirebaseAuth */,
+				BCF5EB982A87B56A006460AD /* FirebaseFirestore */,
+				BCF5EB9A2A87B56A006460AD /* FirebaseFirestoreSwift */,
+				BCF5EB9C2A87B56A006460AD /* FirebaseStorage */,
+			);
 			productName = "Uber-SwiftUI";
 			productReference = BCF5EB4F2A868CEE006460AD /* Uber-SwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -287,6 +343,9 @@
 				Base,
 			);
 			mainGroup = BCF5EB462A868CEE006460AD;
+			packageReferences = (
+				BCF5EB952A87B56A006460AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = BCF5EB502A868CEE006460AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -303,6 +362,7 @@
 			files = (
 				BCF5EB5A2A868CEF006460AD /* Preview Assets.xcassets in Resources */,
 				BCF5EB572A868CEF006460AD /* Assets.xcassets in Resources */,
+				BCF5EB942A87B47B006460AD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,16 +376,21 @@
 				BCF5EB7B2A869C78006460AD /* LocationSearchViewModel.swift in Sources */,
 				BCF5EB772A869555006460AD /* LocationSearchView.swift in Sources */,
 				BCF5EB6D2A868EED006460AD /* LocationManager.swift in Sources */,
+				BC8A6DF42A87CD5400504B3B /* SideMenuOptionViewModel.swift in Sources */,
 				BCF5EB802A86BC51006460AD /* RideRequestView.swift in Sources */,
 				BCF5EB842A878C94006460AD /* Double.swift in Sources */,
 				BCF5EB7D2A86B3EA006460AD /* MapViewState.swift in Sources */,
+				BCF5EB9F2A87B6E0006460AD /* AuthViewModel.swift in Sources */,
 				BCF5EB822A878509006460AD /* RideType.swift in Sources */,
+				BCF5EBA12A87BF74006460AD /* User.swift in Sources */,
 				BCF5EB752A86948D006460AD /* MapViewActionButton.swift in Sources */,
 				BCF5EB882A879A7A006460AD /* Color.swift in Sources */,
 				BCF5EB532A868CEE006460AD /* Uber_SwiftUIApp.swift in Sources */,
+				BC8A6DF62A87CE2C00504B3B /* SideMenuOptionView.swift in Sources */,
 				BCF5EB6B2A868D9E006460AD /* UberMapViewRepresentable.swift in Sources */,
 				BCF5EB862A879289006460AD /* UberLocation.swift in Sources */,
 				BCF5EB8F2A879EC9006460AD /* SignUpView.swift in Sources */,
+				BCF5EBA72A87CA40006460AD /* SideMenuView.swift in Sources */,
 				BCF5EB692A868D43006460AD /* HomeView.swift in Sources */,
 				BCF5EB732A869372006460AD /* LocationSearchActivationView.swift in Sources */,
 				BCF5EB8D2A879EC0006460AD /* SignInView.swift in Sources */,
@@ -473,7 +538,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gytisptasinskas.Uber-SwiftUI";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gytisptasinskas.RideOrderingAppSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -503,7 +568,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gytisptasinskas.Uber-SwiftUI";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gytisptasinskas.RideOrderingAppSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -533,6 +598,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BCF5EB952A87B56A006460AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BCF5EB962A87B56A006460AD /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCF5EB952A87B56A006460AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		BCF5EB982A87B56A006460AD /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCF5EB952A87B56A006460AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		BCF5EB9A2A87B56A006460AD /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCF5EB952A87B56A006460AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		BCF5EB9C2A87B56A006460AD /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCF5EB952A87B56A006460AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BCF5EB472A868CEE006460AD /* Project object */;
 }

@@ -9,9 +9,30 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var mapState = MapViewState.noInput
+    @State private var showSideMenu = false
     @EnvironmentObject var locationViewModel: LocationSearchViewModel
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     var body: some View {
+        Group {
+            if authViewModel.userSession == nil {
+                SignInView()
+            } else {
+                ZStack {
+                    if showSideMenu {
+                        SideMenuView()
+                    }
+                    mapView
+                        .offset(x: showSideMenu ? 316 : 0)
+                        .shadow(color: showSideMenu ? .black : .clear, radius: 10)
+                }
+            }
+        }
+    }
+}
+
+extension HomeView {
+    var mapView: some View {
         ZStack(alignment: .bottom) {
             ZStack(alignment: .top) {
                 UberMapViewRepresentable(mapState: $mapState)
@@ -29,7 +50,7 @@ struct HomeView: View {
                         }
                 }
                 
-                MapViewActionButton(mapState: $mapState)
+                MapViewActionButton(mapState: $mapState, showSideMenu: $showSideMenu)
                     .padding(.leading)
                     .padding(.top, 4)
             }
@@ -51,5 +72,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(AuthViewModel())
     }
 }

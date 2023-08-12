@@ -9,7 +9,9 @@ import SwiftUI
 
 struct MapViewActionButton: View {
     @Binding var mapState: MapViewState
+    @Binding var showSideMenu: Bool
     @EnvironmentObject var viewModel: LocationSearchViewModel
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     var body: some View {
         Button {
@@ -32,7 +34,7 @@ struct MapViewActionButton: View {
     func actionForState(_ state: MapViewState) {
         switch state {
         case .noInput:
-            print("DEBUG: No Input")
+            showSideMenu.toggle()
         case .searchingForLocation:
             mapState = .noInput
         case .locationSelected, .polylineAdded:
@@ -47,14 +49,14 @@ struct MapViewActionButton: View {
             return "line.3.horizontal"
         case .searchingForLocation, .locationSelected, .polylineAdded:
             return "arrow.left"
-        default:
-            return "line.3.horizontal"
+//        default:
+//            return "line.3.horizontal"
         }
     }
 }
 
 struct MapViewActionButton_Previews: PreviewProvider {
     static var previews: some View {
-        MapViewActionButton(mapState: .constant(.noInput))
+        MapViewActionButton(mapState: .constant(.noInput), showSideMenu: .constant(false))
     }
 }
