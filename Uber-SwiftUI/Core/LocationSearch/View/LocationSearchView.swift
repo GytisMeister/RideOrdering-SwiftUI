@@ -56,8 +56,10 @@ struct LocationSearchView: View {
                                                  subtitle: result.subtitle
                         )
                         .onTapGesture {
-                            viewModel.selectedLocation(result)
-                            mapState = .locationSelected
+                            withAnimation(.spring()) {
+                                viewModel.selectedLocation(result)
+                                mapState = .locationSelected
+                            }
                         }
                     }
                 }
@@ -70,5 +72,6 @@ struct LocationSearchView: View {
 struct LocationSearchView_Previews: PreviewProvider {
     static var previews: some View {
         LocationSearchView(mapState: .constant(.searchingForLocation))
+            .environmentObject(LocationSearchViewModel())
     }
 }
