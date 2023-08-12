@@ -24,6 +24,9 @@
 		BCF5EB842A878C94006460AD /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5EB832A878C94006460AD /* Double.swift */; };
 		BCF5EB862A879289006460AD /* UberLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5EB852A879289006460AD /* UberLocation.swift */; };
 		BCF5EB882A879A7A006460AD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5EB872A879A7A006460AD /* Color.swift */; };
+		BCF5EB8D2A879EC0006460AD /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5EB8C2A879EC0006460AD /* SignInView.swift */; };
+		BCF5EB8F2A879EC9006460AD /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5EB8E2A879EC9006460AD /* SignUpView.swift */; };
+		BCF5EB922A87A4D4006460AD /* CustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5EB912A87A4D4006460AD /* CustomInputField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		BCF5EB832A878C94006460AD /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		BCF5EB852A879289006460AD /* UberLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberLocation.swift; sourceTree = "<group>"; };
 		BCF5EB872A879A7A006460AD /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		BCF5EB8C2A879EC0006460AD /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		BCF5EB8E2A879EC9006460AD /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		BCF5EB912A87A4D4006460AD /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 		BCF5EB512A868CEE006460AD /* Uber-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				BCF5EB902A87A4C2006460AD /* Components */,
 				BCF5EB652A868D08006460AD /* App */,
 				BCF5EB642A868D06006460AD /* Core */,
 				BCF5EB632A868D05006460AD /* Extensions */,
@@ -126,6 +133,7 @@
 		BCF5EB642A868D06006460AD /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				BCF5EB892A879E9B006460AD /* Authentication */,
 				BCF5EB7E2A86BC3F006460AD /* Trips */,
 				BCF5EB6F2A869353006460AD /* LocationSearch */,
 				BCF5EB6E2A869346006460AD /* Home */,
@@ -200,6 +208,39 @@
 				BCF5EB7F2A86BC51006460AD /* RideRequestView.swift */,
 			);
 			path = Trips;
+			sourceTree = "<group>";
+		};
+		BCF5EB892A879E9B006460AD /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				BCF5EB8B2A879EA2006460AD /* ViewModel */,
+				BCF5EB8A2A879EA0006460AD /* View */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		BCF5EB8A2A879EA0006460AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCF5EB8C2A879EC0006460AD /* SignInView.swift */,
+				BCF5EB8E2A879EC9006460AD /* SignUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BCF5EB8B2A879EA2006460AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BCF5EB902A87A4C2006460AD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BCF5EB912A87A4D4006460AD /* CustomInputField.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,8 +325,11 @@
 				BCF5EB532A868CEE006460AD /* Uber_SwiftUIApp.swift in Sources */,
 				BCF5EB6B2A868D9E006460AD /* UberMapViewRepresentable.swift in Sources */,
 				BCF5EB862A879289006460AD /* UberLocation.swift in Sources */,
+				BCF5EB8F2A879EC9006460AD /* SignUpView.swift in Sources */,
 				BCF5EB692A868D43006460AD /* HomeView.swift in Sources */,
 				BCF5EB732A869372006460AD /* LocationSearchActivationView.swift in Sources */,
+				BCF5EB8D2A879EC0006460AD /* SignInView.swift in Sources */,
+				BCF5EB922A87A4D4006460AD /* CustomInputField.swift in Sources */,
 				BCF5EB792A8696F9006460AD /* LocationSearchResultCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
