@@ -61,10 +61,10 @@ extension HomeView {
                     .padding(.top, 4)
             }
             
-            if mapState == .locationSelected || mapState == .polylineAdded {
-                RideRequestView()
+            if let user = authViewModel.currentUser{
+                homeViewModel.viewForState(mapState, user: user)
                     .transition(.move(edge: .bottom))
-            }   
+            }
         }
         .edgesIgnoringSafeArea(.bottom)
         .onReceive(LocationManager.shared.$userLocation) { location in
@@ -75,6 +75,27 @@ extension HomeView {
         .onReceive(homeViewModel.$selectedRideLocation) { location in
             if location != nil {
                 self.mapState = .locationSelected
+            }
+        }
+        .onReceive(homeViewModel.$trip) { trip in
+            guard let trip = trip else {
+                self.mapState = .noInput
+                return
+            }
+            
+            withAnimation(.spring()) {
+                switch trip.state {
+                case .requested:
+                    self.mapState = .tripRequested
+                case .rejected:
+                    self.mapState = .tripRejected
+                case .accepted:
+                    self.mapState = .tripAccepted
+                case .passengerCancelled:
+                    self.mapState = .tripCancelledByPassenger
+                case .driverCancelled:
+                    self.mapState = .tripCancelledByDriver
+                }
             }
         }
     }

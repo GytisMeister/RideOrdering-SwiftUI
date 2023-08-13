@@ -23,6 +23,12 @@
 		BC8A6E122A87FF6F00504B3B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A6E112A87FF6F00504B3B /* UserService.swift */; };
 		BC8A6E142A88042100504B3B /* AcceptTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A6E132A88042100504B3B /* AcceptTripView.swift */; };
 		BC8A6E162A88093F00504B3B /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A6E152A88093F00504B3B /* Trip.swift */; };
+		BC8A6E182A88E2BB00504B3B /* GeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A6E172A88E2BB00504B3B /* GeoPoint.swift */; };
+		BC8A6E1A2A88F5E700504B3B /* TripLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A6E192A88F5E700504B3B /* TripLoadingView.swift */; };
+		BC8A6E1D2A88F63600504B3B /* TripAcceptedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A6E1C2A88F63600504B3B /* TripAcceptedView.swift */; };
+		BC8A6E1F2A88F91200504B3B /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A6E1E2A88F91200504B3B /* Spinner.swift */; };
+		BC8A6E232A89046E00504B3B /* PickUpPassengerVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A6E222A89046E00504B3B /* PickUpPassengerVIew.swift */; };
+		BC8A6E262A89141700504B3B /* TripCancelledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A6E252A89141700504B3B /* TripCancelledView.swift */; };
 		BCF5EB532A868CEE006460AD /* Uber_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5EB522A868CEE006460AD /* Uber_SwiftUIApp.swift */; };
 		BCF5EB572A868CEF006460AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF5EB562A868CEF006460AD /* Assets.xcassets */; };
 		BCF5EB5A2A868CEF006460AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF5EB592A868CEF006460AD /* Preview Assets.xcassets */; };
@@ -70,6 +76,12 @@
 		BC8A6E112A87FF6F00504B3B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		BC8A6E132A88042100504B3B /* AcceptTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptTripView.swift; sourceTree = "<group>"; };
 		BC8A6E152A88093F00504B3B /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		BC8A6E172A88E2BB00504B3B /* GeoPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoPoint.swift; sourceTree = "<group>"; };
+		BC8A6E192A88F5E700504B3B /* TripLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripLoadingView.swift; sourceTree = "<group>"; };
+		BC8A6E1C2A88F63600504B3B /* TripAcceptedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripAcceptedView.swift; sourceTree = "<group>"; };
+		BC8A6E1E2A88F91200504B3B /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		BC8A6E222A89046E00504B3B /* PickUpPassengerVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpPassengerVIew.swift; sourceTree = "<group>"; };
+		BC8A6E252A89141700504B3B /* TripCancelledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCancelledView.swift; sourceTree = "<group>"; };
 		BCF5EB4F2A868CEE006460AD /* Uber-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Uber-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF5EB522A868CEE006460AD /* Uber_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uber_SwiftUIApp.swift; sourceTree = "<group>"; };
 		BCF5EB562A868CEF006460AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,6 +157,33 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		BC8A6E202A89042B00504B3B /* PassengerViews */ = {
+			isa = PBXGroup;
+			children = (
+				BCF5EB7F2A86BC51006460AD /* RideRequestView.swift */,
+				BC8A6E192A88F5E700504B3B /* TripLoadingView.swift */,
+				BC8A6E1C2A88F63600504B3B /* TripAcceptedView.swift */,
+			);
+			path = PassengerViews;
+			sourceTree = "<group>";
+		};
+		BC8A6E212A89042D00504B3B /* DriverViews */ = {
+			isa = PBXGroup;
+			children = (
+				BC8A6E132A88042100504B3B /* AcceptTripView.swift */,
+				BC8A6E222A89046E00504B3B /* PickUpPassengerVIew.swift */,
+			);
+			path = DriverViews;
+			sourceTree = "<group>";
+		};
+		BC8A6E242A89140A00504B3B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				BC8A6E252A89141700504B3B /* TripCancelledView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		BCF5EB462A868CEE006460AD = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +253,7 @@
 				BCF5EB832A878C94006460AD /* Double.swift */,
 				BCF5EB872A879A7A006460AD /* Color.swift */,
 				BC8A6E082A87F0F800504B3B /* DeveloperPreview.swift */,
+				BC8A6E172A88E2BB00504B3B /* GeoPoint.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -298,8 +338,9 @@
 		BCF5EB7E2A86BC3F006460AD /* Trips */ = {
 			isa = PBXGroup;
 			children = (
-				BCF5EB7F2A86BC51006460AD /* RideRequestView.swift */,
-				BC8A6E132A88042100504B3B /* AcceptTripView.swift */,
+				BC8A6E242A89140A00504B3B /* Shared */,
+				BC8A6E212A89042D00504B3B /* DriverViews */,
+				BC8A6E202A89042B00504B3B /* PassengerViews */,
 			);
 			path = Trips;
 			sourceTree = "<group>";
@@ -337,6 +378,7 @@
 				BC8A6DFC2A87D8BE00504B3B /* SavedLocationRowView.swift */,
 				BC8A6DFE2A87D9C800504B3B /* SettingsRowView.swift */,
 				BC8A6E042A87E7B300504B3B /* LocationSearchResultsView.swift */,
+				BC8A6E1E2A88F91200504B3B /* Spinner.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -454,14 +496,19 @@
 				BCF5EB772A869555006460AD /* LocationSearchView.swift in Sources */,
 				BC8A6E162A88093F00504B3B /* Trip.swift in Sources */,
 				BC8A6E142A88042100504B3B /* AcceptTripView.swift in Sources */,
+				BC8A6E232A89046E00504B3B /* PickUpPassengerVIew.swift in Sources */,
 				BCF5EB6D2A868EED006460AD /* LocationManager.swift in Sources */,
 				BC8A6DF42A87CD5400504B3B /* SideMenuOptionViewModel.swift in Sources */,
 				BCF5EB802A86BC51006460AD /* RideRequestView.swift in Sources */,
 				BC8A6E092A87F0F800504B3B /* DeveloperPreview.swift in Sources */,
 				BCF5EB842A878C94006460AD /* Double.swift in Sources */,
+				BC8A6E1F2A88F91200504B3B /* Spinner.swift in Sources */,
+				BC8A6E1D2A88F63600504B3B /* TripAcceptedView.swift in Sources */,
+				BC8A6E182A88E2BB00504B3B /* GeoPoint.swift in Sources */,
 				BCF5EB7D2A86B3EA006460AD /* MapViewState.swift in Sources */,
 				BC8A6E0F2A87FDF000504B3B /* Image.swift in Sources */,
 				BCF5EB9F2A87B6E0006460AD /* AuthViewModel.swift in Sources */,
+				BC8A6E262A89141700504B3B /* TripCancelledView.swift in Sources */,
 				BC8A6E052A87E7B300504B3B /* LocationSearchResultsView.swift in Sources */,
 				BC8A6E0D2A87FB4D00504B3B /* DriverAnnotation.swift in Sources */,
 				BC8A6E012A87DE5200504B3B /* SavedLocationViewModel.swift in Sources */,
@@ -472,6 +519,7 @@
 				BC8A6E072A87E91100504B3B /* SavedLocation.swift in Sources */,
 				BC8A6E122A87FF6F00504B3B /* UserService.swift in Sources */,
 				BCF5EB752A86948D006460AD /* MapViewActionButton.swift in Sources */,
+				BC8A6E1A2A88F5E700504B3B /* TripLoadingView.swift in Sources */,
 				BCF5EB882A879A7A006460AD /* Color.swift in Sources */,
 				BCF5EB532A868CEE006460AD /* Uber_SwiftUIApp.swift in Sources */,
 				BC8A6DF62A87CE2C00504B3B /* SideMenuOptionView.swift in Sources */,
